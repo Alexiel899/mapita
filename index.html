@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Mapa Accesible</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css"/>
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+<div id="map"></div>
+
+<div class="panel">
+  <button onclick="setTipo('rampa')">♿ Rampa</button>
+  <button onclick="setTipo('baño')">🚻 Baño</button>
+  <button onclick="setTipo('general')">📍 General</button>
+</div>
+
+<div id="menuAccion" class="modal oculto">
+  <div class="modal-content">
+    <h3>¿Qué quieres hacer?</h3>
+    <button onclick="verPunto()">👀 Ver</button>
+    <button onclick="mostrarFormulario()">➕ Agregar</button>
+    <button onclick="cerrarModal()">❌ Cancelar</button>
+  </div>
+</div>
+
+<div id="formulario" class="modal oculto">
+  <div class="modal-content">
+    <h3>Nuevo punto</h3>
+    <input id="descripcion" placeholder="Describe el lugar">
+    <div id="estrellas">
+      <span onclick="setRating(1)">⭐</span>
+      <span onclick="setRating(2)">⭐</span>
+      <span onclick="setRating(3)">⭐</span>
+      <span onclick="setRating(4)">⭐</span>
+      <span onclick="setRating(5)">⭐</span>
+    </div>
+    <button onclick="guardarPunto()">Guardar</button>
+    <button onclick="cerrarModal()">Cancelar</button>
+  </div>
+</div>
+
+<script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
+<script src="script.js"></script>
+
+</body>
+</html>
